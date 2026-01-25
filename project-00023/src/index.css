@@ -1,20 +1,5 @@
 @import "tailwindcss";
 
-
 * {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Science Gothic" ,"Hanken Grotesk", Arial, sans-serif;
-    color: #D9D9D9;
-    padding: 20px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    background-image: url("./assets/backGround.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    backdrop-filter: blur(5px);
+    font-family: "Science Gothic" , "Hanken Grotesk", Arial, sans-serif ;
 }
