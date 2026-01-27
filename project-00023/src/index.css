@@ -3,3 +3,7 @@
 * {
     font-family: "Science Gothic" , "Hanken Grotesk", Arial, sans-serif ;
 }
+
+::-webkit-scrollbar {
+    display: none;
+} 

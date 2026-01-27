@@ -14,7 +14,9 @@ export default function App() {
         {/* NAV */}
         <div className="px-4 py-6 space-y-2">
           <div className="flex items-center gap-2 px-4 py-2 bg-cyan-500/10 text-cyan-400 rounded-md">
-            <span className="bg-cyan-600 text-white text-xs font-bold rounded-full px-1.5 py-0.5">1</span>
+            <span className="bg-cyan-600 text-white text-xs font-bold rounded-full px-1.5 py-0.5">
+              1
+            </span>
             <span>Feed</span>
           </div>
           <div className="flex items-center gap-3 px-4 py-2 text-gray-400 hover:bg-blue-500/20 hover:text-blue-800 rounded-md">
@@ -82,7 +84,11 @@ export default function App() {
           </p>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <img className="w-8 h-8 rounded-full" src="/pfp.jpeg" alt="Profile" />
+              <img
+                className="w-8 h-8 rounded-full"
+                src="/pfp.jpeg"
+                alt="Profile"
+              />
               <div>
                 <p className="text-sm text-white">Kareem</p>
                 <p className="text-xs text-gray-400">@kareemAbbas</p>
@@ -104,7 +110,9 @@ export default function App() {
                 placeholder="Search the grid..."
                 className="w-full bg-white/5 border border-white/10 rounded-full py-2 px-5 pl-12 text-sm focus:outline-none focus:border-cyan-500/50 transition"
               />
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">🔍</span>
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                🔍
+              </span>
             </div>
             <button className="bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-2 rounded-full text-sm font-medium transition">
               SCAN
@@ -162,18 +170,31 @@ export default function App() {
                   <p className="font-medium">Marcus_Tech</p>
                   <p className="text-xs text-gray-500">@marcus.tech • 2h ago</p>
                 </div>
-                <button className="ml-auto text-gray-400 hover:text-white">•••</button>
+                <button className="ml-auto text-gray-400 hover:text-white">
+                  •••
+                </button>
               </div>
 
-              <h2 className="text-xl font-bold mb-3">The Future of Neural Interfaces</h2>
+              <h2 className="text-xl font-bold mb-3">
+                The Future of Neural Interfaces
+              </h2>
               <p className="text-gray-300 mb-4">
-                Just finished reading about the latest developments in brain-computer interfaces. The technology is evolving faster than we anticipated. Direct neural connections might become mainstream within the next decade...
+                Just finished reading about the latest developments in
+                brain-computer interfaces. The technology is evolving faster
+                than we anticipated. Direct neural connections might become
+                mainstream within the next decade...
               </p>
 
               <div className="flex gap-2 mb-4">
-                <span className="bg-purple-600/20 text-purple-300 px-3 py-1 rounded-full text-xs">#Technology</span>
-                <span className="bg-cyan-600/20 text-cyan-300 px-3 py-1 rounded-full text-xs">#Neural</span>
-                <span className="bg-pink-600/20 text-pink-300 px-3 py-1 rounded-full text-xs">#Future</span>
+                <span className="bg-purple-600/20 text-purple-300 px-3 py-1 rounded-full text-xs">
+                  #Technology
+                </span>
+                <span className="bg-cyan-600/20 text-cyan-300 px-3 py-1 rounded-full text-xs">
+                  #Neural
+                </span>
+                <span className="bg-pink-600/20 text-pink-300 px-3 py-1 rounded-full text-xs">
+                  #Future
+                </span>
               </div>
 
               <div className="flex items-center gap-8 text-sm text-gray-400">
@@ -185,6 +206,53 @@ export default function App() {
                 </button>
                 <button className="flex items-center gap-2 hover:text-purple-400">
                   <span>↪</span> 18
+                </button>
+                <button className="flex items-center gap-2 hover:text-yellow-400">
+                  <span>🔖</span>
+                </button>
+              </div>
+            </div>
+            {/* second post */}
+            <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
+                  K
+                </div>
+                <div>
+                  <p className="font-medium">kareemAbbas</p>
+                  <p className="text-xs text-gray-500">@kareemAbbas • 1h ago</p>
+                </div>
+                <button className="ml-auto text-gray-400 hover:text-white">
+                  •••
+                </button>
+              </div>
+
+              <p className="text-gray-300 mb-4">
+                Anyone else think we're living in a simulation? The glitches are
+                everywhere if you know where to look...{" "}
+              </p>
+
+              <div className="flex gap-2 mb-4">
+                <span className="bg-purple-600/20 text-purple-300 px-3 py-1 rounded-full text-xs">
+                  #Technology
+                </span>
+                <span className="bg-cyan-600/20 text-cyan-300 px-3 py-1 rounded-full text-xs">
+                  #Neural
+                </span>
+                <span className="bg-pink-600/20 text-pink-300 px-3 py-1 rounded-full text-xs">
+                  #Future
+                </span>
+              </div>
+
+              <div className="flex items-center gap-8 text-sm text-gray-400">
+                <button className="flex items-center gap-2 hover:text-pink-400">
+                  <span>❤️</span> 3005
+                </button>
+                <button className="flex items-center gap-2 hover:text-cyan-400">
+                  <span>💬</span> 528
+                </button>
+                <button className="flex items-center gap-2 hover:text-purple-400">
+                  <span>↪</span> 1002
                 </button>
                 <button className="flex items-center gap-2 hover:text-yellow-400">
                   <span>🔖</span>
@@ -206,13 +274,17 @@ export default function App() {
                   Cyberpunk Architecture: Building Tomorrow's Cities
                 </h2>
                 <p className="text-gray-300 mb-4">
-                  Exploring the intersection of technology and urban design in the modern megacity. How neon aesthetics and high-tech infrastructure are shaping our future...
+                  Exploring the intersection of technology and urban design in
+                  the modern megacity. How neon aesthetics and high-tech
+                  infrastructure are shaping our future...
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-purple-600"></div>
                   <div>
                     <p className="font-medium">Sarah_Architect</p>
-                    <p className="text-xs text-gray-500">Architecture Channel</p>
+                    <p className="text-xs text-gray-500">
+                      Architecture Channel
+                    </p>
                   </div>
                   <button className="ml-auto bg-purple-600 hover:bg-purple-500 text-white px-6 py-2 rounded-full text-sm transition">
                     Read More
@@ -226,17 +298,40 @@ export default function App() {
           <aside className="w-80 bg-gradient-to-b from-[#0a0f1f] to-[#0d1228] border-l border-white/10 overflow-y-auto p-6 space-y-8">
             {/* RECOMMENDED READS */}
             <div>
-              <h3 className="text-lg font-bold text-purple-400 mb-4">RECOMMENDED READS</h3>
+              <h3 className="text-lg font-bold text-purple-400 mb-4">
+                RECOMMENDED READS
+              </h3>
               <div className="space-y-6">
                 {[
-                  { title: "Digital Ghosts", author: "by J. Morrison", rating: "4.6", img: "neon-ghost.jpg" },
-                  { title: "Chrome Skies", author: "by K. Tanaka", rating: "4.9", img: "chrome-city.jpg" },
-                  { title: "Neon Shadows", author: "by R. Chen", rating: "4.7", img: "neon-shadows.jpg" },
+                  {
+                    title: "Digital Ghosts",
+                    author: "by J. Morrison",
+                    rating: "4.6",
+                    img: "neon-ghost.jpg",
+                  },
+                  {
+                    title: "Chrome Skies",
+                    author: "by K. Tanaka",
+                    rating: "4.9",
+                    img: "chrome-city.jpg",
+                  },
+                  {
+                    title: "Neon Shadows",
+                    author: "by R. Chen",
+                    rating: "4.7",
+                    img: "neon-shadows.jpg",
+                  },
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-4 hover:bg-white/5 p-3 rounded-lg transition cursor-pointer">
-                    <div className="w-20 h-28 bg-gray-700 rounded-md flex-shrink-0 bg-cover" 
-                         style={{ backgroundImage: `url(https://images.unsplash.com/photo-${i === 0 ? '1553356084-58ef4a67b2a7' : i === 1 ? '1557683316-973673baf926' : '1563089145-b99c56e0d0e9'}?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80)` }}>
-                    </div>
+                  <div
+                    key={i}
+                    className="flex gap-4 hover:bg-white/5 p-3 rounded-lg transition cursor-pointer"
+                  >
+                    <div
+                      className="w-20 h-28 bg-gray-700 rounded-md flex-shrink-0 bg-cover"
+                      style={{
+                        backgroundImage: `url(https://images.unsplash.com/photo-${i === 0 ? "1553356084-58ef4a67b2a7" : i === 1 ? "1557683316-973673baf926" : "1563089145-b99c56e0d0e9"}?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80)`,
+                      }}
+                    ></div>
                     <div>
                       <p className="font-medium">{item.title}</p>
                       <p className="text-sm text-gray-400">{item.author}</p>
@@ -252,10 +347,15 @@ export default function App() {
 
             {/* ACTIVE NOW */}
             <div>
-              <h3 className="text-lg font-bold text-cyan-400 mb-4">ACTIVE NOW</h3>
+              <h3 className="text-lg font-bold text-cyan-400 mb-4">
+                ACTIVE NOW
+              </h3>
               <div className="space-y-4">
                 {["Cipher_X", "Nova_Prime", "Ghost_Wire"].map((name, i) => (
-                  <div key={i} className="flex items-center justify-between hover:bg-white/5 p-3 rounded-lg transition">
+                  <div
+                    key={i}
+                    className="flex items-center justify-between hover:bg-white/5 p-3 rounded-lg transition"
+                  >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
                         {name[0]}
@@ -275,7 +375,9 @@ export default function App() {
 
             {/* YOUR STATS */}
             <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-500/20 rounded-xl p-6">
-              <h3 className="text-lg font-bold text-purple-400 mb-4">YOUR STATS</h3>
+              <h3 className="text-lg font-bold text-purple-400 mb-4">
+                YOUR STATS
+              </h3>
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span>Posts</span>
@@ -285,17 +387,17 @@ export default function App() {
                   <span>Followers</span>
                   <span className="font-medium">2.4k</span>
                 </div>
-                <div className="flex justify-between">
+                <div className="flex justify-between border-b border-amber-20 pb-2">
                   <span>Following</span>
-                  <span className="font-medium">384</span>
+                  <span className="font-medium ">384</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Articles Read</span>
-                  <span className="font-medium">89</span>
+                  <span className="font-medium text-indigo-700">89</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Books Saved</span>
-                  <span className="font-medium">23</span>
+                  <span className="font-medium text-fuchsia-600">23</span>
                 </div>
               </div>
             </div>
@@ -305,3 +407,4 @@ export default function App() {
     </div>
   );
 }
+
