@@ -1,1 +1,15 @@
-// here we will think before we code
+but first i need to understand when to make a component and when there is no need an understand those things 
+and make a large plan for the project and the connection between every component as im doing i will learn also when to use state and when to just derive it from the state
+and where to use the state
+-------------------------------------
+rn i will think of the big picture we have on the left side a place that we will not use now cuz we need to control the posts first in order to derive it from it
+so we gonna start with the posts get a fake data and map over it and render it and with that we can manipulate the data like it comment it share it add it as an article
+or book or in saved and where to find it in the feed or the trending and maybe if it has more than 1000 likes it will be in the popular and 
+if u follow the user it will be in the following and we need to make a function to check if the user is following the user and if so we will show the following button 
+idk maybe in the future i will make an profile page to edit the profile and etc.....
+and the search needs to work idk how now 
+and maybe change the status into a real status like posts and following and followers and articles read and books saved 
+and yeah add the edit post thing 
+-------------------------------------
+i was thinking if i already have the data for post why dont i start with this its ofc better than type the post as jsx 
+so im gonna start with that and then see what is the next step

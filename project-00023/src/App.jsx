@@ -1,6 +1,7 @@
 export default function App() {
-  // will do the logic with react btw i know that no one will see it but sometimes
-  //  i feel like im not smart enough for this shit and rn is one of those times
+
+  
+
   return (
     <div className="h-screen flex bg-[#050814] text-gray-300 overflow-hidden">
       {/* SIDEBAR - LEFT */}
@@ -163,12 +164,14 @@ export default function App() {
             {/* Post Card */}
             <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
-                  M
-                </div>
+                <img
+                  className="w-10 h-10 rounded-full"
+                  src="pfp2.jpeg"
+                  alt="Marcus_Tech"
+                />
                 <div>
                   <p className="font-medium">Marcus_Tech</p>
-                  <p className="text-xs text-gray-500">@marcus.tech • 2h ago</p>
+                  <p className="text-xs text-gray-500">@marcus.tech • 1h ago</p>
                 </div>
                 <button className="ml-auto text-gray-400 hover:text-white">
                   •••
@@ -215,12 +218,14 @@ export default function App() {
             {/* second post */}
             <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
-                  K
-                </div>
+                <img
+                  className="w-10 h-10 rounded-full"
+                  src="pfp.jpeg"
+                  alt="kareemAbbas"
+                />
                 <div>
                   <p className="font-medium">kareemAbbas</p>
-                  <p className="text-xs text-gray-500">@kareemAbbas • 1h ago</p>
+                  <p className="text-xs text-gray-500">@kareemAbbas • 2h ago</p>
                 </div>
                 <button className="ml-auto text-gray-400 hover:text-white">
                   •••
@@ -255,7 +260,7 @@ export default function App() {
                   <span>↪</span> 1002
                 </button>
                 <button className="flex items-center gap-2 hover:text-yellow-400">
-                  <span>🔖</span>
+                  <span>♠️</span>
                 </button>
               </div>
             </div>
@@ -264,7 +269,7 @@ export default function App() {
             <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl overflow-hidden">
               <div className="h-64 bg-gradient-to-r from-purple-900/40 to-pink-900/40 relative">
                 {/* You can replace with real image */}
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80')] bg-cover bg-center opacity-60"></div>
+                <div className="absolute inset-0 bg-[url('articlesimg.jpg')] bg-cover bg-center opacity-60"></div>
               </div>
               <div className="p-6">
                 <span className="bg-purple-600 text-white text-xs px-3 py-1 rounded-full uppercase font-medium">
@@ -279,9 +284,9 @@ export default function App() {
                   infrastructure are shaping our future...
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-purple-600"></div>
+                  <img className="w-10 h-10 rounded-full" src="girlpfp.jpeg" alt="" />
                   <div>
-                    <p className="font-medium">Sarah_Architect</p>
+                    <p className="font-medium">Lucy_Architect</p>
                     <p className="text-xs text-gray-500">
                       Architecture Channel
                     </p>
@@ -307,19 +312,19 @@ export default function App() {
                     title: "Digital Ghosts",
                     author: "by J. Morrison",
                     rating: "4.6",
-                    img: "neon-ghost.jpg",
+                    img: "img1.png",
                   },
                   {
                     title: "Chrome Skies",
                     author: "by K. Tanaka",
                     rating: "4.9",
-                    img: "chrome-city.jpg",
+                    img: "img2.png",
                   },
                   {
                     title: "Neon Shadows",
                     author: "by R. Chen",
                     rating: "4.7",
-                    img: "neon-shadows.jpg",
+                    img: "img3.png",
                   },
                 ].map((item, i) => (
                   <div
@@ -327,9 +332,9 @@ export default function App() {
                     className="flex gap-4 hover:bg-white/5 p-3 rounded-lg transition cursor-pointer"
                   >
                     <div
-                      className="w-20 h-28 bg-gray-700 rounded-md flex-shrink-0 bg-cover"
+                      className="w-20 h-28 bg-gray-700 rounded-md shrink-0 bg-cover bg-center"
                       style={{
-                        backgroundImage: `url(https://images.unsplash.com/photo-${i === 0 ? "1553356084-58ef4a67b2a7" : i === 1 ? "1557683316-973673baf926" : "1563089145-b99c56e0d0e9"}?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80)`,
+                        backgroundImage: `url(${item.img}) `,
                       }}
                     ></div>
                     <div>
@@ -347,15 +352,10 @@ export default function App() {
 
             {/* ACTIVE NOW */}
             <div>
-              <h3 className="text-lg font-bold text-cyan-400 mb-4">
-                ACTIVE NOW
-              </h3>
+              <h3 className="text-lg font-bold text-cyan-400 mb-4">ACTIVE NOW</h3>
               <div className="space-y-4">
                 {["Cipher_X", "Nova_Prime", "Ghost_Wire"].map((name, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center justify-between hover:bg-white/5 p-3 rounded-lg transition"
-                  >
+                  <div key={i} className="flex items-center justify-between hover:bg-white/5 p-3 rounded-lg transition">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
                         {name[0]}
