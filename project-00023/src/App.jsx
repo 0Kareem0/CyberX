@@ -1,7 +1,7 @@
+import { posts } from "./FakePostsData";
+import PostCard from "./components/Post";
+
 export default function App() {
-
-  
-
   return (
     <div className="h-screen flex bg-[#050814] text-gray-300 overflow-hidden">
       {/* SIDEBAR - LEFT */}
@@ -161,109 +161,10 @@ export default function App() {
               </div>
             </div>
 
-            {/* Post Card */}
-            <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
-              <div className="flex items-center gap-3 mb-4">
-                <img
-                  className="w-10 h-10 rounded-full"
-                  src="pfp2.jpeg"
-                  alt="Marcus_Tech"
-                />
-                <div>
-                  <p className="font-medium">Marcus_Tech</p>
-                  <p className="text-xs text-gray-500">@marcus.tech • 1h ago</p>
-                </div>
-                <button className="ml-auto text-gray-400 hover:text-white">
-                  •••
-                </button>
-              </div>
-
-              <h2 className="text-xl font-bold mb-3">
-                The Future of Neural Interfaces
-              </h2>
-              <p className="text-gray-300 mb-4">
-                Just finished reading about the latest developments in
-                brain-computer interfaces. The technology is evolving faster
-                than we anticipated. Direct neural connections might become
-                mainstream within the next decade...
-              </p>
-
-              <div className="flex gap-2 mb-4">
-                <span className="bg-purple-600/20 text-purple-300 px-3 py-1 rounded-full text-xs">
-                  #Technology
-                </span>
-                <span className="bg-cyan-600/20 text-cyan-300 px-3 py-1 rounded-full text-xs">
-                  #Neural
-                </span>
-                <span className="bg-pink-600/20 text-pink-300 px-3 py-1 rounded-full text-xs">
-                  #Future
-                </span>
-              </div>
-
-              <div className="flex items-center gap-8 text-sm text-gray-400">
-                <button className="flex items-center gap-2 hover:text-pink-400">
-                  <span>❤️</span> 234
-                </button>
-                <button className="flex items-center gap-2 hover:text-cyan-400">
-                  <span>💬</span> 45
-                </button>
-                <button className="flex items-center gap-2 hover:text-purple-400">
-                  <span>↪</span> 18
-                </button>
-                <button className="flex items-center gap-2 hover:text-yellow-400">
-                  <span>🔖</span>
-                </button>
-              </div>
-            </div>
-            {/* second post */}
-            <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
-              <div className="flex items-center gap-3 mb-4">
-                <img
-                  className="w-10 h-10 rounded-full"
-                  src="pfp.jpeg"
-                  alt="kareemAbbas"
-                />
-                <div>
-                  <p className="font-medium">kareemAbbas</p>
-                  <p className="text-xs text-gray-500">@kareemAbbas • 2h ago</p>
-                </div>
-                <button className="ml-auto text-gray-400 hover:text-white">
-                  •••
-                </button>
-              </div>
-
-              <p className="text-gray-300 mb-4">
-                Anyone else think we're living in a simulation? The glitches are
-                everywhere if you know where to look...{" "}
-              </p>
-
-              <div className="flex gap-2 mb-4">
-                <span className="bg-purple-600/20 text-purple-300 px-3 py-1 rounded-full text-xs">
-                  #Technology
-                </span>
-                <span className="bg-cyan-600/20 text-cyan-300 px-3 py-1 rounded-full text-xs">
-                  #Neural
-                </span>
-                <span className="bg-pink-600/20 text-pink-300 px-3 py-1 rounded-full text-xs">
-                  #Future
-                </span>
-              </div>
-
-              <div className="flex items-center gap-8 text-sm text-gray-400">
-                <button className="flex items-center gap-2 hover:text-pink-400">
-                  <span>❤️</span> 3005
-                </button>
-                <button className="flex items-center gap-2 hover:text-cyan-400">
-                  <span>💬</span> 528
-                </button>
-                <button className="flex items-center gap-2 hover:text-purple-400">
-                  <span>↪</span> 1002
-                </button>
-                <button className="flex items-center gap-2 hover:text-yellow-400">
-                  <span>♠️</span>
-                </button>
-              </div>
-            </div>
+            {/* POSTS FROM DATA */}
+            {posts.map((post) => (
+              <PostCard key={post.id} post={post} />
+            ))}
 
             {/* Featured Article */}
             <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl overflow-hidden">
@@ -284,7 +185,11 @@ export default function App() {
                   infrastructure are shaping our future...
                 </p>
                 <div className="flex items-center gap-4">
-                  <img className="w-10 h-10 rounded-full" src="girlpfp.jpeg" alt="" />
+                  <img
+                    className="w-10 h-10 rounded-full"
+                    src="girlpfp.jpeg"
+                    alt=""
+                  />
                   <div>
                     <p className="font-medium">Lucy_Architect</p>
                     <p className="text-xs text-gray-500">
@@ -352,10 +257,15 @@ export default function App() {
 
             {/* ACTIVE NOW */}
             <div>
-              <h3 className="text-lg font-bold text-cyan-400 mb-4">ACTIVE NOW</h3>
+              <h3 className="text-lg font-bold text-cyan-400 mb-4">
+                ACTIVE NOW
+              </h3>
               <div className="space-y-4">
                 {["Cipher_X", "Nova_Prime", "Ghost_Wire"].map((name, i) => (
-                  <div key={i} className="flex items-center justify-between hover:bg-white/5 p-3 rounded-lg transition">
+                  <div
+                    key={i}
+                    className="flex items-center justify-between hover:bg-white/5 p-3 rounded-lg transition"
+                  >
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
                         {name[0]}
@@ -407,4 +317,3 @@ export default function App() {
     </div>
   );
 }
-
