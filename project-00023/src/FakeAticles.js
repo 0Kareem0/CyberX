@@ -1,0 +1,78 @@
+export const articles = [
+  {
+    id: "art-001",
+    type: "article",
+    title: "The Architecture of Digital Collapse",
+    subtitle: "How ghost data centers and abandoned server farms are becoming the new ruins of our era",
+    author: {
+      name: "Lucy",
+      username: "@lucy.arch",
+      avatar: "lucypfp.jpeg",
+    },
+    readTime: "11 min",
+    tags: ["#CyberUrbanism", "#AbandonedTech", "#Ruins"],
+    likes: 1240,
+    comments: 187,
+    saves: 643,
+    cover: "art-img1.jpg",
+    date: "2 days ago",
+  },
+
+  {
+    id: "art-002",
+    type: "article",
+    title: "Synthetic Memory Is Coming — And It’s Not Optional",
+    subtitle: "Why corporations will soon sell you better versions of your own past",
+    author: {
+      name: "Dr. Elias Crowe",
+      username: "@elias.neuro",
+      avatar: "art-pfp1.jpeg",
+    },
+    readTime: "14 min",
+    tags: ["#Neurotech", "#Memory", "#Ethics"],
+    likes: 3890,
+    comments: 742,
+    saves: 2104,
+    cover: "art-img4.jpg",
+    date: "19h ago",
+  },
+
+  {
+    id: "art-003",
+    type: "article",
+    title: "Night Markets 2040: The Last Analog Economy",
+    subtitle: "Inside the sprawling, unregulated physical black markets that still thrive under neon",
+    author: {
+      name: "Ryn Shadow",
+      username: "@ryn.shadow",
+      avatar: "art-pfp2.jpeg",
+    },
+    readTime: "9 min",
+    tags: ["#Cyberpunk", "#BlackMarket", "#StreetEconomy"],
+    likes: 2780,
+    comments: 319,
+    saves: 1256,
+    cover: "art-img3.jpg",
+    date: "3 days ago",
+  },
+
+  {
+    id: "art-004",
+    type: "article",
+    title: "Why Everyone Will Wear AR Contacts by 2032",
+    subtitle: "The quiet death of phones, glasses, and every other screen we once carried",
+    author: {
+      name: "Luna Voss",
+      username: "@lunavoss.tech",
+      avatar: "art-pfp3.jpeg",
+    },
+    readTime: "12 min",
+    tags: ["#AR", "#Wearables", "#FutureUI"],
+    likes: 1870,
+    comments: 421,
+    saves: 983,
+    cover: "art-img5.jpg",
+    date: "1 day ago",
+  },
+
+];

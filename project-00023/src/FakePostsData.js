@@ -38,10 +38,10 @@ export const posts = [
     time: "3h ago",
     title: "",
     content: "Anyone else think we're living in a simulation? The glitches are everywhere if you know where to look...",
-    tags: ["#Architecture", "#Cyberpunk", "#UrbanDesign"],
-    likes: 189,
-    comments: 32,
-    shares: 24,
+    tags: ["#Simulation", "#Glitches", "#Reality"],
+    likes: 3418,
+    comments: 1021,
+    shares: 917,
     bookmarked: false,
   },
   {
@@ -49,7 +49,7 @@ export const posts = [
     author: {
       name: "Alex_Designer",
       username: "@alex.design",
-      avatar: "https://randomuser.me/api/portraits/men/22.jpg",
+      avatar: "post-pfp1.jpeg",
     },
     time: "4h ago",
     title: "Minimalist UI Trends in 2025",
@@ -65,7 +65,7 @@ export const posts = [
     author: {
       name: "Sarah_Code",
       username: "@sarah.code",
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: "post-pfp3.jpeg",
     },
     time: "5h ago",
     title: "Building Scalable APIs with Node.js",
@@ -81,7 +81,7 @@ export const posts = [
     author: {
       name: "Mike_Data",
       username: "@mike.data",
-      avatar: "https://randomuser.me/api/portraits/men/56.jpg",
+      avatar: "post-pfp2.jpeg",
     },
     time: "7h ago",
     title: "Machine Learning for Beginners",

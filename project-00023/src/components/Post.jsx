@@ -10,7 +10,7 @@ export default function PostCard({ post }) {
           alt={post.author.name}
         />
         <div>
-          <p className="font-medium">{post.author.name}</p>
+          <p className="font-medium">{post.author.name}</p> 
           <p className="text-xs text-gray-500">
             {post.author.username} • {post.time}
           </p>
