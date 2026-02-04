@@ -10,7 +10,7 @@ export default function App() {
       <aside className="w-64 bg-gradient-to-b from-[#0a0f1f] to-[#0d1228] border-r border-white/10 flex flex-col">
         {/* LOGO */}
         <div className="px-6 py-5 border-b border-white/10">
-          <h1 className="text-2xl font-bold text-cyan-400">NEXUS</h1>
+          <h1 className="text-2xl font-bold text-cyan-400">CyberX</h1>
           <p className="text-xs text-cyan-400/70">SOCIAL GRID v2.0</p>
         </div>
 
