@@ -1,4 +1,4 @@
-import { currentUser, posts } from "./FakePostsData";
+import { currentUser, posts , activeUsers } from "./FakePostsData";
 import { articles } from "./FakeAticles";
 import { recommends } from "./fakeRecoommends";
 import PostCard from "./components/Post";
@@ -59,10 +59,10 @@ export default function App() {
             <Recommends items={recommends} />
 
             {/* ACTIVE NOW */}
-            <ActiveFriends/>
+            <ActiveFriends user={activeUsers}/>
  
             {/* YOUR STATS */}
-            <Status/>
+            <Status stats={currentUser.stats}/>
           </aside>
         </div>
       </div>

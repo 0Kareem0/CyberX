@@ -107,5 +107,7 @@ export const recommendedReads = [
 
 export const activeUsers = [
   { name: "Cipher_X", status: "Online now" },
+  { name: "Nova_Prime", status: "Online now" },
+  { name: "Ghost_Wire", status: "Online now" },
   // more...
 ];
