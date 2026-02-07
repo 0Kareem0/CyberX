@@ -1,4 +1,4 @@
-export default function PostCard({ post }) {
+export default function PostCard({ post, handleLike, heart, likes }) {
   return (
     <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
       
@@ -42,8 +42,8 @@ export default function PostCard({ post }) {
 
       {/* ACTIONS */}
       <div className="flex items-center gap-8 text-sm text-gray-400">
-        <button className="flex items-center gap-2 hover:text-pink-400">
-          <span>❤️</span> {post.likes}
+        <button onClick={handleLike} className="flex items-center gap-2 hover:text-pink-400">
+          <span>{heart}</span> {post.likes + likes}
         </button>
         <button className="flex items-center gap-2 hover:text-cyan-400">
           <span>💬</span> {post.comments}
@@ -54,7 +54,7 @@ export default function PostCard({ post }) {
         <button className="flex items-center gap-2 hover:text-yellow-400">
           <span>🔖</span>
         </button>
-      </div>
+      </div>  
     </div>
   );
 }

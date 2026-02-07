@@ -24,3 +24,16 @@ to not get lost im finishing the atr shit now and then
  we will do the heart thing in the posts with state so the user can like
  the posts and ofc the number of the likes will be updated so its connected
  
+
+ i did things in likes but it has some problems like u can like the post
+ more than 1 time and when u unlike or make the heart back to gray the number
+ doesnt decrease matter affect it increase cuz of the onClick method im so dizzy
+ and tired and kinda depressed today idk if im gonna be able to do anything   
+
+ okay i fixed the increase and decrease issue now the issue is when i like a post
+ its apply on all the other posts
+
+ im crying rn im so so so tired and depressed im taking to my uncle but i couldn't
+ handle it my eyes just cried but i muted so fast 
+
+ i will just push what i did even so it has issue but i will fix it later i hope so 

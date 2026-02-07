@@ -12,6 +12,14 @@ import LeftBar from "./components/LeftBar";
 
 export default function App() {
     const [likes, setLikes] = useState(0);
+    const [heart, setHeart] = useState('🩶');
+    
+    const handleLike = () => {
+        setLikes(heart === '🩶' ? likes + 1 : likes - 1);
+        setHeart(prev => prev === '🩶' ? '❤️' : '🩶');
+    };  
+
+
   return (
     <div className="h-screen flex bg-[#050814] text-gray-300 overflow-hidden">
       {/* SIDEBAR - LEFT */}
@@ -46,7 +54,8 @@ export default function App() {
 
             {/* POSTS FROM DATA */}
             {posts.map((post) => (
-              <PostCard key={post.id} post={post} />
+              <PostCard key={post.id} post={post} handleLike={handleLike} 
+              heart={heart} likes={likes} />
             ))}
 
             {/* Featured Article */}
