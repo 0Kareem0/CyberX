@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { currentUser, posts , activeUsers } from "./FakePostsData";
 import { articles } from "./FakeAticles";
 import { recommends } from "./fakeRecoommends";
@@ -10,6 +11,7 @@ import Header from "./components/Header";
 import LeftBar from "./components/LeftBar";  
 
 export default function App() {
+    const [likes, setLikes] = useState(0);
   return (
     <div className="h-screen flex bg-[#050814] text-gray-300 overflow-hidden">
       {/* SIDEBAR - LEFT */}

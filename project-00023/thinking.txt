@@ -18,4 +18,9 @@ the next step is gonna be
 
 
 to not get lost im finishing the atr shit now and then
- i will into the recommended reads
+ i will into the recommended reads now that i almost finished everything
+ its time to make the logic and really type some react xD i forget it 
+ i need to search for things real quick 
+ we will do the heart thing in the posts with state so the user can like
+ the posts and ofc the number of the likes will be updated so its connected
+ 
