@@ -42,9 +42,10 @@ export default function PostCard({ post, handleLike, heart, likes }) {
 
       {/* ACTIONS */}
       <div className="flex items-center gap-8 text-sm text-gray-400">
-        <button onClick={handleLike} className="flex items-center gap-2 hover:text-pink-400">
+        <button onClick={handleLike} className="flex items-center gap-2 hover:text-red-400">
           <span>{heart}</span> {post.likes + likes}
         </button>
+
         <button className="flex items-center gap-2 hover:text-cyan-400">
           <span>💬</span> {post.comments}
         </button>

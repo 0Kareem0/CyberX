@@ -12,12 +12,12 @@ import LeftBar from "./components/LeftBar";
 
 export default function App() {
     const [likes, setLikes] = useState(0);
-    const [heart, setHeart] = useState('🩶');
+    const [heart, setHeart] = useState('🩶'); 
     
     const handleLike = () => {
         setLikes(heart === '🩶' ? likes + 1 : likes - 1);
         setHeart(prev => prev === '🩶' ? '❤️' : '🩶');
-    };  
+    }; 
 
 
   return (
