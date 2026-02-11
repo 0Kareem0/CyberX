@@ -27,6 +27,7 @@ export const posts = [
     comments: 45,
     shares: 18,
     bookmarked: false,
+    liked:false,  
   },
   {
     id: 2,
@@ -43,6 +44,7 @@ export const posts = [
     comments: 1021,
     shares: 917,
     bookmarked: false,
+    liked:true,  
   },
   {
     id: 3,
@@ -59,6 +61,7 @@ export const posts = [
     comments: 28,
     shares: 15,
     bookmarked: false,
+    liked:false,
   },
   {
     id: 4,
@@ -75,6 +78,7 @@ export const posts = [
     comments: 41,
     shares: 29,
     bookmarked: false,
+    liked: false,
   },
   {
     id: 5,
@@ -91,6 +95,7 @@ export const posts = [
     comments: 67,
     shares: 45,
     bookmarked: false,
+    liked: false,
   },
  
 ];

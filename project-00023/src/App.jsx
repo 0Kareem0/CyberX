@@ -11,13 +11,23 @@ import Header from "./components/Header";
 import LeftBar from "./components/LeftBar";  
 
 export default function App() {
-    const [likes, setLikes] = useState(0);
-    const [heart, setHeart] = useState('🩶'); 
-    
-    const handleLike = () => {
-        setLikes(heart === '🩶' ? likes + 1 : likes - 1);
-        setHeart(prev => prev === '🩶' ? '❤️' : '🩶');
-    }; 
+    const [feed, setFeed] = useState(posts);
+        
+ const handleLike = (id) => {
+  setFeed(prev =>
+    prev.map(post => {
+      if (post.id !== id) return post;
+
+      const liked = !post.liked;
+
+      return {
+        ...post,
+        liked,
+        likes: liked ? post.likes + 1 : post.likes - 1
+      };
+    })
+  );
+};
 
 
   return (
@@ -53,10 +63,14 @@ export default function App() {
             </div>
 
             {/* POSTS FROM DATA */}
-            {posts.map((post) => (
-              <PostCard key={post.id} post={post} handleLike={handleLike} 
-              heart={heart} likes={likes} />
-            ))}
+{feed.map(post => (
+  <PostCard
+    key={post.id}
+    post={post}
+    handleLike={handleLike}
+  />
+))}
+
 
             {/* Featured Article */}
             {articles.map((art) => (

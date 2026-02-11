@@ -1,7 +1,6 @@
-export default function PostCard({ post, handleLike, heart, likes }) {
+export default function PostCard({ post, handleLike }) {
   return (
     <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
-      
       {/* AUTHOR */}
       <div className="flex items-center gap-3 mb-4">
         <img
@@ -10,20 +9,16 @@ export default function PostCard({ post, handleLike, heart, likes }) {
           alt={post.author.name}
         />
         <div>
-          <p className="font-medium">{post.author.name}</p> 
+          <p className="font-medium">{post.author.name}</p>
           <p className="text-xs text-gray-500">
             {post.author.username} • {post.time}
           </p>
         </div>
-        <button className="ml-auto text-gray-400 hover:text-white">
-          •••
-        </button>
+        <button className="ml-auto text-gray-400 hover:text-white">•••</button>
       </div>
 
       {/* TITLE (optional) */}
-      {post.title && (
-        <h2 className="text-xl font-bold mb-3">{post.title}</h2>
-      )}
+      {post.title && <h2 className="text-xl font-bold mb-3">{post.title}</h2>}
 
       {/* CONTENT */}
       <p className="text-gray-300 mb-4">{post.content}</p>
@@ -42,8 +37,12 @@ export default function PostCard({ post, handleLike, heart, likes }) {
 
       {/* ACTIONS */}
       <div className="flex items-center gap-8 text-sm text-gray-400">
-        <button onClick={handleLike} className="flex items-center gap-2 hover:text-red-400">
-          <span>{heart}</span> {post.likes + likes}
+        <button
+          onClick={() => handleLike(post.id)}
+          className="flex items-center gap-2"
+        >
+          <span>{post.liked ? "❤️" : "🤍"}</span>
+          {post.likes}
         </button>
 
         <button className="flex items-center gap-2 hover:text-cyan-400">
@@ -55,7 +54,7 @@ export default function PostCard({ post, handleLike, heart, likes }) {
         <button className="flex items-center gap-2 hover:text-yellow-400">
           <span>🔖</span>
         </button>
-      </div>  
+      </div>
     </div>
   );
 }
