@@ -1,4 +1,4 @@
-export default function Header() {
+export default function Header({ handleCreatePost }) {
   return (
             <header className="h-16 bg-gradient-to-r from-[#0a0f1f] to-[#0d1228] border-b border-white/10 flex items-center justify-between px-6">
               <div className="flex items-center gap-4 flex-1 max-w-2xl">
@@ -30,10 +30,10 @@ export default function Header() {
                     3
                   </span>
                 </button>
-                <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white px-5 py-2 rounded-full text-sm font-medium transition flex items-center gap-2">
+                <button onClick={() => handleCreatePost()} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white px-5 py-2 rounded-full text-sm font-medium transition flex items-center gap-2">
                   + CREATE
                 </button>
               </div>
-            </header>
+            </header> 
   );
 }

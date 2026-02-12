@@ -12,23 +12,45 @@ import LeftBar from "./components/LeftBar";
 
 export default function App() {
     const [feed, setFeed] = useState(posts);
-        
+
+
+    const handleCreatePost = () => {
+        const newId = Math.max(...feed.map(post => post.id), 0) + 1;
+        setFeed(prev => [{
+    id: newId,
+    author: {
+      name: "suka_blyat",
+      username: "@suka.blyat",
+      avatar: "/pfp2.jpeg",
+    },
+    time: "1h ago",
+    title: "Hello World ",
+    content: "This is my first post!",
+    tags: ["#Hello", "#World", "#FirstPost"],
+    likes: 0,
+    comments: 0,
+    shares: 0,
+    bookmarked: false,
+    liked:false,  
+  },
+          ...prev]);
+    };
+
  const handleLike = (id) => {
-  setFeed(prev =>
-    prev.map(post => {
-      if (post.id !== id) return post;
+setFeed(prev => {
+ return prev.map(post =>{
+       if (post.id !== id) return post;
+    const liked = !post.liked
 
-      const liked = !post.liked;
-
-      return {
-        ...post,
-        liked,
-        likes: liked ? post.likes + 1 : post.likes - 1
-      };
-    })
-  );
+    return{
+      ...post,
+      liked,
+      likes: liked ? post.likes + 1 : post.likes - 1
+    }
+  
+ })
+})
 };
-
 
   return (
     <div className="h-screen flex bg-[#050814] text-gray-300 overflow-hidden">
@@ -38,7 +60,7 @@ export default function App() {
       {/* MAIN CONTENT AREA */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* HEADER */}
-      <Header />
+      <Header handleCreatePost={handleCreatePost}/>
 
         {/* MAIN FEED + RIGHT SIDEBAR */}
         <div className="flex-1 flex overflow-hidden">
@@ -63,7 +85,7 @@ export default function App() {
             </div>
 
             {/* POSTS FROM DATA */}
-{feed.map(post => (
+{ feed.map(post => (
   <PostCard
     key={post.id}
     post={post}
