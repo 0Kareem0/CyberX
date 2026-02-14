@@ -14,27 +14,29 @@ export default function App() {
     const [feed, setFeed] = useState(posts);
 
 
-    const handleCreatePost = () => {
-        const newId = Math.max(...feed.map(post => post.id), 0) + 1;
-        setFeed(prev => [{
+const handleCreatePost = (data) => {
+  const newId = Math.max(...feed.map(p => p.id), 0) + 1;
+
+  const newPost = {
     id: newId,
     author: {
-      name: "suka_blyat",
-      username: "@suka.blyat",
-      avatar: "/pfp2.jpeg",
+      name: currentUser.name,
+      username: currentUser.username,
+      avatar: currentUser.avatar
     },
-    time: "1h ago",
-    title: "Hello World ",
-    content: "This is my first post!",
-    tags: ["#Hello", "#World", "#FirstPost"],
+    time: "just now",
+    title: data.title,
+    content: data.content,
+    tags: data.tags,
     likes: 0,
     comments: 0,
     shares: 0,
     bookmarked: false,
-    liked:false,  
-  },
-          ...prev]);
-    };
+    liked: false
+  };
+
+  setFeed(prev => [newPost, ...prev]);
+};
 
  const handleLike = (id) => {
 setFeed(prev => {
@@ -60,7 +62,7 @@ setFeed(prev => {
       {/* MAIN CONTENT AREA */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* HEADER */}
-      <Header handleCreatePost={handleCreatePost}/>
+      <Header handleCreatePost={handleCreatePost} />
 
         {/* MAIN FEED + RIGHT SIDEBAR */}
         <div className="flex-1 flex overflow-hidden">
