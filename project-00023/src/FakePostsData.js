@@ -12,7 +12,7 @@ export const currentUser = {
 };
 
 export const posts = [
-  {
+  { 
     id: 1,
     author: {
       name: "Marcus_Tech",

@@ -14,6 +14,8 @@ export default function App() {
     const [feed, setFeed] = useState(posts);
 
 
+    
+
 const handleCreatePost = (data) => {
   const newId = Math.max(...feed.map(p => p.id), 0) + 1;
 
