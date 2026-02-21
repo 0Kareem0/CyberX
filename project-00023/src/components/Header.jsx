@@ -65,7 +65,7 @@ export default function Header({ handleCreatePost }) {
             onClick={() => setOpen(true)}
             className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white px-5 py-2 rounded-full text-sm font-medium transition flex items-center gap-2"
           >
-            + CREATE
+            + CREATE  
           </button>
         </div>
       </header>
