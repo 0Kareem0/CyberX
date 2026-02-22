@@ -54,3 +54,6 @@ done with the like i will leave the comment and share later they are hard
  after that i will add the time zone right on the posts 
  i just realized that this dosent matter now cuz when i refresh the post is gone 
  when i save the data in local storage or some kind of database it will matter 
+
+
+ showed up but didnt do anything 
