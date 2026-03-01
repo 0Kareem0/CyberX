@@ -59,4 +59,22 @@ done with the like i will leave the comment and share later they are hard
  showed up but didnt do anything 
 
  now i need to make the enter work when i make a new post instead
- of me clicking the create button 
+ of me clicking the create button
+ okay this i cant do rn cuz its not that important for now 
+
+
+ so i think i have to do one more this is to make the first field 
+ selected when u open the create button 
+ okay im done with this 
+
+
+ im willing to end it rn but i want to think about the next step 
+ im thinking of the comments and shares 
+
+ the comment i think will be simply to open a field and write the comment
+ and i will add a few fake comments on every comment section 
+
+ and the share maybe would be the post it self and above it
+ my name and etc like in twitter retweet 
+ 
+ alhamdulillah :D

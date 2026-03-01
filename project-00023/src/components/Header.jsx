@@ -82,6 +82,7 @@ export default function Header({ handleCreatePost }) {
             </h3>
 
             <input
+              type="text" autoFocus
               className="w-full mb-3 bg-white/5 border border-white/10 rounded px-3 py-2 text-sm outline-none"
               placeholder="Title"
               value={title}
