@@ -57,3 +57,6 @@ done with the like i will leave the comment and share later they are hard
 
 
  showed up but didnt do anything 
+
+ now i need to make the enter work when i make a new post instead
+ of me clicking the create button 

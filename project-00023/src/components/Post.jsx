@@ -4,9 +4,10 @@ export default function PostCard({ post, handleLike }) {
       {/* AUTHOR */}
       <div className="flex items-center gap-3 mb-4">
         <img
-          className="w-10 h-10 rounded-full"
-          src={post.author.avatar}
+          className="w-10 h-10 rounded-full object-cover"
+          src={post.author.avatar.startsWith('/') ? post.author.avatar : `/${post.author.avatar}`}
           alt={post.author.name}
+          loading="lazy"
         />
         <div>
           <p className="font-medium">{post.author.name}</p>

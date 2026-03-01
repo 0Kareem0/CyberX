@@ -113,6 +113,7 @@ export default function Header({ handleCreatePost }) {
 
               <button
                 onClick={submit}
+
                 className="px-4 py-2 text-sm bg-cyan-600 text-white rounded"
               >
                 Create

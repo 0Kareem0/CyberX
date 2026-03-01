@@ -13,7 +13,6 @@ import LeftBar from "./components/LeftBar";
 export default function App() {
     const [feed, setFeed] = useState(posts);
 
-
     
 
 const handleCreatePost = (data) => {

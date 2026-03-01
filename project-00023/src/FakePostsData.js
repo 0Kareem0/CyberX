@@ -34,7 +34,7 @@ export const posts = [
     author: {
       name: "Kareem",
       username: "@kareemabbas",
-      avatar: "pfp.jpeg",
+      avatar: "/pfp2.jpeg",
     },
     time: "3h ago",
     title: "",
@@ -51,7 +51,7 @@ export const posts = [
     author: {
       name: "Alex_Designer",
       username: "@alex.design",
-      avatar: "post-pfp1.jpeg",
+      avatar: "/post-pfp1.jpeg",
     },
     time: "4h ago",
     title: "Minimalist UI Trends in 2025",
@@ -68,7 +68,7 @@ export const posts = [
     author: {
       name: "Sarah_Code",
       username: "@sarah.code",
-      avatar: "post-pfp3.jpeg",
+      avatar: "/post-pfp3.jpeg",
     },
     time: "5h ago",
     title: "Building Scalable APIs with Node.js",
@@ -85,7 +85,7 @@ export const posts = [
     author: {
       name: "Mike_Data",
       username: "@mike.data",
-      avatar: "post-pfp2.jpeg",
+      avatar: "/post-pfp2.jpeg",
     },
     time: "7h ago",
     title: "Machine Learning for Beginners",
