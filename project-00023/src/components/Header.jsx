@@ -1,14 +1,13 @@
 import { useState } from "react";
 
 export default function Header({ handleCreatePost }) {
-
   const [open, setOpen] = useState(false);
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [tags, setTags] = useState("");
 
-  const submit = () => {
+  const sumbit = () => {
     if (!title.trim() || !content.trim()) return;
 
     handleCreatePost({
@@ -16,8 +15,8 @@ export default function Header({ handleCreatePost }) {
       content,
       tags: tags
         .split(",")
-        .map(t => t.trim())
-        .filter(Boolean)
+        .map((t) => t.trim())
+        .filter(Boolean),
     });
 
     setTitle("");
@@ -60,33 +59,27 @@ export default function Header({ handleCreatePost }) {
             </span>
           </button>
 
-          {/* 🔴 CHANGE ONLY HERE */}
           <button
             onClick={() => setOpen(true)}
             className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white px-5 py-2 rounded-full text-sm font-medium transition flex items-center gap-2"
           >
-            + CREATE  
+            + CREATE
           </button>
         </div>
       </header>
 
-      {/* ================== FORM MODAL ================== */}
-
       {open && (
         <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
-
           <div className="bg-[#0d1228] p-6 rounded-xl w-full max-w-md border border-white/10">
-
-            <h3 className="text-white text-lg mb-4">
-              Create new post
-            </h3>
+            <h3 className="text-white text-lg mb-4">Create new post</h3>
 
             <input
-              type="text" autoFocus
+              type="text"
+              autoFocus
               className="w-full mb-3 bg-white/5 border border-white/10 rounded px-3 py-2 text-sm outline-none"
               placeholder="Title"
               value={title}
-              onChange={e => setTitle(e.target.value)}
+              onChange={(e) => setTitle(e.target.value)}
             />
 
             <textarea
@@ -94,33 +87,31 @@ export default function Header({ handleCreatePost }) {
               placeholder="Content"
               rows={4}
               value={content}
-              onChange={e => setContent(e.target.value)}
+              onChange={(e) => setContent(e.target.value)}
             />
 
             <input
               className="w-full mb-4 bg-white/5 border border-white/10 rounded px-3 py-2 text-sm outline-none"
               placeholder="tags: react, js, linux"
               value={tags}
-              onChange={e => setTags(e.target.value)}
+              onChange={(e) => setTags(e.target.value)}
             />
 
             <div className="flex justify-end gap-3">
               <button
-                onClick={() => setOpen(false)}
                 className="px-4 py-2 text-sm text-gray-300"
+                onClick={() => setOpen(false)}
               >
                 Cancel
               </button>
 
               <button
-                onClick={submit}
-
                 className="px-4 py-2 text-sm bg-cyan-600 text-white rounded"
+                onClick={sumbit}
               >
-                Create
+                Submit
               </button>
             </div>
-
           </div>
         </div>
       )}

@@ -82,4 +82,3 @@ done with the like i will leave the comment and share later they are hard
  when he type a tag and press enter it will be added to the tags array and covered 
  with border and bg etc...
 
- 
