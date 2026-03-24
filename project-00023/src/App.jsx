@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { currentUser, posts , activeUsers } from "./FakePostsData";
+import { currentUser, posts, activeUsers } from "./FakePostsData";
 import { articles } from "./FakeAticles";
 import { recommends } from "./fakeRecoommends";
 import PostCard from "./components/Post";
@@ -8,52 +8,49 @@ import Recommends from "./components/recommends";
 import ActiveFriends from "./components/activeFriends";
 import Status from "./components/Stats";
 import Header from "./components/Header";
-import LeftBar from "./components/LeftBar";  
+import LeftBar from "./components/LeftBar";
 
 export default function App() {
-    const [feed, setFeed] = useState(posts);
+  const [feed, setFeed] = useState(posts);
 
-    
+  const handleCreatePost = (data) => {
+    const newId = Math.max(...feed.map((p) => p.id), 0) + 1;
 
-const handleCreatePost = (data) => {
-  const newId = Math.max(...feed.map(p => p.id), 0) + 1;
+    const newPost = {
+      id: newId,
+      author: {
+        name: currentUser.name,
+        username: currentUser.username,
+        avatar: currentUser.avatar,
+      },
+      time: "just now",
+      title: data.title,
+      content: data.content,
+      tags: data.tags,
+      likes: 0,
+      comments: 0,
+      shares: 0,
+      bookmarked: false,
+      liked: false,
+    };
 
-  const newPost = {
-    id: newId,
-    author: {
-      name: currentUser.name,
-      username: currentUser.username,
-      avatar: currentUser.avatar
-    },
-    time: "just now",
-    title: data.title,
-    content: data.content,
-    tags: data.tags,
-    likes: 0,
-    comments: 0,
-    shares: 0,
-    bookmarked: false,
-    liked: false
+    setFeed((prev) => [newPost, ...prev]);
   };
 
-  setFeed(prev => [newPost, ...prev]);
-};
+  const handleLike = (id) => {
+    setFeed((prev) => {
+      return prev.map((post) => {
+        if (post.id !== id) return post;
+        const liked = !post.liked;
 
- const handleLike = (id) => {
-setFeed(prev => {
- return prev.map(post =>{
-       if (post.id !== id) return post;
-    const liked = !post.liked
-
-    return{
-      ...post,
-      liked,
-      likes: liked ? post.likes + 1 : post.likes - 1
-    }
-  
- })
-})
-};
+        return {
+          ...post,
+          liked,
+          likes: liked ? post.likes + 1 : post.likes - 1,
+        };
+      });
+    });
+  };
 
   return (
     <div className="h-screen flex bg-[#050814] text-gray-300 overflow-hidden">
@@ -63,7 +60,7 @@ setFeed(prev => {
       {/* MAIN CONTENT AREA */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* HEADER */}
-      <Header handleCreatePost={handleCreatePost} />
+        <Header handleCreatePost={handleCreatePost} />
 
         {/* MAIN FEED + RIGHT SIDEBAR */}
         <div className="flex-1 flex overflow-hidden">
@@ -88,18 +85,13 @@ setFeed(prev => {
             </div>
 
             {/* POSTS FROM DATA */}
-{ feed.map(post => (
-  <PostCard
-    key={post.id}
-    post={post}
-    handleLike={handleLike}
-  />
-))}
-
+            {feed.map((post) => (
+              <PostCard key={post.id} post={post} handleLike={handleLike} />
+            ))}
 
             {/* Featured Article */}
             {articles.map((art) => (
-              <Articles key={art.id}  articles={art}/>
+              <Articles key={art.id} articles={art} />
             ))}
           </main>
 
@@ -109,10 +101,10 @@ setFeed(prev => {
             <Recommends items={recommends} />
 
             {/* ACTIVE NOW */}
-            <ActiveFriends user={activeUsers}/>
- 
+            <ActiveFriends user={activeUsers} />
+
             {/* YOUR STATS */}
-            <Status stats={currentUser.stats}/>
+            <Status stats={currentUser.stats} />
           </aside>
         </div>
       </div>

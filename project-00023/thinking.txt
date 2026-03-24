@@ -77,4 +77,9 @@ done with the like i will leave the comment and share later they are hard
  and the share maybe would be the post it self and above it
  my name and etc like in twitter retweet 
  
- alhamdulillah :D
+ // Tag edit 
+ in the future i will make the tags easier for the user and better like
+ when he type a tag and press enter it will be added to the tags array and covered 
+ with border and bg etc...
+
+ 
