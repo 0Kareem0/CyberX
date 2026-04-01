@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Comment from "./Comment";
-export default function PostCard({ post, handleLike, handleComment }) {
+export default function PostCard({ post, handleLike ,handleComment }) {
 
         const [open, setOpen] = useState(false);
   

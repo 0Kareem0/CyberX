@@ -6,7 +6,7 @@ export default function Comment({ handleComment, setOpen, postId }) {
   const submit = () => {
     if (!content.trim()) return;
 
-    handleComment(postId); // 🔥 only send id (simple version)
+    handleComment(postId); // only send id (simple version)
 
     setContent("");
     setOpen(false);

@@ -89,3 +89,10 @@ it will be like the create post and when its done the number of comments should 
 and if u wanna show the comment u will click it and it should open the comment section with
 the post above it to be clear i will make the other posts gone and replace it with the comment 
 section and after we should make a like button for the comment and a replay button
+
+// comment section \\
+now that im done with the comment open and close and the counter 
+next i should show the comment section and every comment i typed
+it will not be stored in anything for now so if i refresh it will be gone
+
+ill just read something in the code and understand it and just move on 
