@@ -37,6 +37,21 @@ export default function App() {
     setFeed((prev) => [newPost, ...prev]);
   };
 
+  const handleComment = (id) => {
+    setFeed((prev) => {
+      return prev.map((post) => {
+        if (post.id !== id) return post;
+        const commented = !post.commented;
+
+        return {
+          ...post,
+          commented,
+          comments: commented ? post.comments + 1 : post.comments + 1,
+        };
+      });
+    });
+  };
+
   const handleLike = (id) => {
     setFeed((prev) => {
       return prev.map((post) => {
@@ -86,7 +101,7 @@ export default function App() {
 
             {/* POSTS FROM DATA */}
             {feed.map((post) => (
-              <PostCard key={post.id} post={post} handleLike={handleLike} />
+              <PostCard key={post.id} post={post} handleLike={handleLike} handleComment={handleComment} />
             ))}
 
             {/* Featured Article */}

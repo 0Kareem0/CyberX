@@ -83,3 +83,9 @@ done with the like i will leave the comment and share later they are hard
  with border and bg etc...
 
 i showed today learning some other things a light session 
+
+next im gonna do the comment 
+it will be like the create post and when its done the number of comments should be +1 
+and if u wanna show the comment u will click it and it should open the comment section with
+the post above it to be clear i will make the other posts gone and replace it with the comment 
+section and after we should make a like button for the comment and a replay button

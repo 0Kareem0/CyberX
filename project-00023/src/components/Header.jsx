@@ -7,7 +7,7 @@ export default function Header({ handleCreatePost }) {
   const [content, setContent] = useState("");
   const [tags, setTags] = useState("");
 
-  const sumbit = () => {
+  const submit = () => {
     if (!title.trim() || !content.trim()) return;
 
     handleCreatePost({
@@ -107,7 +107,7 @@ export default function Header({ handleCreatePost }) {
 
               <button
                 className="px-4 py-2 text-sm bg-cyan-600 text-white rounded"
-                onClick={sumbit}
+                onClick={submit}
               >
                 Submit
               </button>

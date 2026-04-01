@@ -34,7 +34,7 @@ export const posts = [
     author: {
       name: "Kareem",
       username: "@kareemabbas",
-      avatar: "/pfp2.jpeg",
+      avatar: "/pfp.jpeg",
     },
     time: "3h ago",
     title: "",

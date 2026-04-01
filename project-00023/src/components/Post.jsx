@@ -1,4 +1,9 @@
-export default function PostCard({ post, handleLike }) {
+import { useState } from "react";
+import Comment from "./Comment";
+export default function PostCard({ post, handleLike, handleComment }) {
+
+        const [open, setOpen] = useState(false);
+  
   return (
     <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
       {/* AUTHOR */}
@@ -43,19 +48,27 @@ export default function PostCard({ post, handleLike }) {
           className="flex items-center gap-2"
         >
           <span>{post.liked ? "❤️" : "🤍"}</span>
-          {post.likes}
+          {post.likes} 
         </button>
 
-        <button className="flex items-center gap-2 hover:text-cyan-400">
+        <button 
+          onClick={() => setOpen(true)}
+          className="flex items-center gap-2 hover:text-cyan-400"
+        >
           <span>💬</span> {post.comments}
         </button>
         <button className="flex items-center gap-2 hover:text-purple-400">
           <span>↪</span> {post.shares}
         </button>
+
+
         <button className="flex items-center gap-2 hover:text-yellow-400">
           <span>🔖</span>
+            
         </button>
+
       </div>
+      {open && <Comment handleComment={(commentData) => handleComment(post.id, commentData)} open={open} setOpen={setOpen} />}
     </div>
   );
 }
