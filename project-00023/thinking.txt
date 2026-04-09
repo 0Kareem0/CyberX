@@ -101,4 +101,5 @@ ill just read something in the code and understand it and just move on
 2. Modify the handleComment function in App.jsx to actually store the comment content
 3. Update the Comment.jsx to pass the comment content
 4. Modify Post.jsx to show the comments when clicking the comment button
-5. Make the comment section toggleable in Post.jsx to show/hide comments 
+5. Make the comment section toggleable in Post.jsx to show/hide comments
+and add a add comment button to add a button and for the emoji it should show the button

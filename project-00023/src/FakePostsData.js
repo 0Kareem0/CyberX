@@ -24,10 +24,11 @@ export const posts = [
     content: "Just finished reading about the latest developments in brain-computer interfaces...",
     tags: ["#Technology", "#Neural", "#Future"],
     likes: 234,
-    comments: 45,
+    commentsCounter: 45,
     shares: 18,
     bookmarked: false,
-    liked:false,  
+    liked:false,
+    comment:[]
   },
   {
     id: 2,
@@ -41,10 +42,11 @@ export const posts = [
     content: "Anyone else think we're living in a simulation? The glitches are everywhere if you know where to look...",
     tags: ["#Simulation", "#Glitches", "#Reality"],
     likes: 3418,
-    comments: 1021,
+    commentsCounter: 1021,
     shares: 917,
     bookmarked: false,
     liked:true,  
+    comment:[]
   },
   {
     id: 3,
@@ -58,10 +60,11 @@ export const posts = [
     content: "The rise of clean, functional interfaces continues to dominate the design landscape...",
     tags: ["#Design", "#UI", "#Minimalism"],
     likes: 156,
-    comments: 28,
+    commentsCounter: 28,
     shares: 15,
     bookmarked: false,
     liked:false,
+    comment:[]
   },
   {
     id: 4,
@@ -75,10 +78,11 @@ export const posts = [
     content: "Best practices for creating robust, maintainable API endpoints...",
     tags: ["#Backend", "#NodeJS", "#API"],
     likes: 203,
-    comments: 41,
+    commentsCounter: 41,
     shares: 29,
     bookmarked: false,
     liked: false,
+    comment:[]
   },
   {
     id: 5,
@@ -92,10 +96,11 @@ export const posts = [
     content: "A comprehensive guide to understanding the fundamentals of ML...",
     tags: ["#AI", "#MachineLearning", "#Beginners"],
     likes: 312,
-    comments: 67,
+    commentsCounter: 67,
     shares: 45,
     bookmarked: false,
     liked: false,
+    comment:[]
   },
  
 ];
