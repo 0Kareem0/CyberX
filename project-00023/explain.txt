@@ -1,0 +1,89 @@
+I'll explain:
+1. The overall structure of the app
+2. Key concepts and patterns used
+3. The logic behind each part
+4. Tips for coding similar apps
+Let me structure this as a comprehensive guide.
+Understanding This React Social Media App
+This is a React-based social media feed application (like a Twitter/X clone) with a dark futuristic theme called "Neural Feed". Let me break down the code for you.
+---
+1. Overall Architecture
+The app uses a 3-column layout:
+┌─────────┬────────────────────────────────┬──────────────┐
+│ LeftBar │     Main Feed Area            │ Right Sidebar│
+│ (Nav)   │  - Create Post Input          │ - Recommends │
+│         │  - Posts Feed                │ - Active     │
+│         │  - Articles                 │ - Stats      │
+└─────────┴────────────────────────────────┴──────────────┘
+           Header (Search + Actions)
+Key Files:
+- App.jsx - Main container, holds state, manages data flow
+- components/ - Reusable UI pieces
+- FakePostsData.js - Mock data (simulates a database)
+---
+2. State Management (useState)
+Why use useState? - React needs state to track changes and re-render the UI when data changes.
+// App.jsx:14
+const [feed, setFeed] = useState(posts);
+- feed = current posts displayed
+- setFeed = function to update posts
+Why separate this? - So when you add a post, React knows to re-render the feed.
+---
+3. Creating Posts - handleCreatePost Function
+// App.jsx:16-38
+const handleCreatePost = (data) => {
+  const newId = Math.max(...feed.map((p) => p.id), 0) + 1;
+
+  const newPost = {
+    id: newId,
+    author: { name: currentUser.name, username: currentUser.username, avatar: currentUser.avatar },
+    time: "just now",
+    title: data.title,
+    content: data.content,
+    tags: data.tags,
+    likes: 0,
+    commentsCounter: 0,
+    shares: 0,
+    bookmarked: false,
+    liked: false,
+  };
+
+  setFeed((prev) => [newPost, ...prev]);  // Add new post at TOP
+};
+Logic breakdown:
+1. Generate unique ID - find highest existing ID, add 1
+2. Attach current user as author
+3. Set timestamp to "just now"
+4. Add to feed array with new post at the beginning (using spread [newPost, ...prev])
+---
+4. Liking Posts - handleLike Function
+// App.jsx:55-68
+const handleLike = (id) => {
+  setFeed((prev) => {
+    return prev.map((post) => {
+      if (post.id !== id) return post;  // Skip different posts
+      const liked = !post.liked;       // Toggle state
+
+      return {
+        ...post,                      // Copy all existing properties
+        liked,                         // Update liked status
+        likes: liked ? post.likes + 1 : post.likes - 1,  // +1 or -1
+      };
+    });
+  });
+};
+Why use .map()? - It returns a NEW array (immutable update). React needs new array reference to trigger re-render.
+Logic: Toggle between liked/unliked, increment/decrement count accordingly.
+---
+5. Data Flow Between Components
+Header.jsx (user types post)
+       │
+       ▼
+   handleCreatePost() in App.jsx
+       │
+       ▼
+       setFeed() updates state
+       │
+       ▼
+  Post.jsx receives new post via .map()
+Props drilling: Data flows downward via props:
