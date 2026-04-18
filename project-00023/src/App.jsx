@@ -28,7 +28,7 @@ export default function App() {
       content: data.content,
       tags: data.tags,
       likes: 0,
-      comments: 0,
+      commentsCounter: 0,
       shares: 0,
       bookmarked: false,
       liked: false,
@@ -37,22 +37,8 @@ export default function App() {
     setFeed((prev) => [newPost, ...prev]);
   };
 
-  const handleComment = (id) => {
-    setFeed((prev) => {
-      return prev.map((post) => {
-        if (post.id !== id) return post;
-        const commented = !post.commented;
 
-        return {
-          ...post,
-          commented,
-          comments: commented ? post.comments + 1 : post.comments + 1,
-        };
-      });
-    });
-  };
-
-  const handleLike = (id) => {
+    const handleLike = (id) => {
     setFeed((prev) => {
       return prev.map((post) => {
         if (post.id !== id) return post;
@@ -66,6 +52,23 @@ export default function App() {
       });
     });
   };
+
+  const handleComment = (id) => {
+    setFeed((prev) => {
+      return prev.map((post) => {
+        if (post.id !== id) return post;
+        const commented = !post.commented;
+
+        return {
+          ...post,
+          commented,
+          commentsCounter: commented ? post.commentsCounter + 1 : post.commentsCounter + 1,
+        };
+      });
+    });
+  };
+
+
 
   return (
     <div className="h-screen flex bg-[#050814] text-gray-300 overflow-hidden">

@@ -55,7 +55,7 @@ export default function PostCard({ post, handleLike ,handleComment }) {
           onClick={() => setOpen(true)}
           className="flex items-center gap-2 hover:text-cyan-400"
         >
-          <span>💬</span> {post.comments}
+          <span>💬</span> {post.commentsCounter} {post.comments}
         </button>
         <button className="flex items-center gap-2 hover:text-purple-400">
           <span>↪</span> {post.shares}
