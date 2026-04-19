@@ -2,7 +2,7 @@ import { useState } from "react";
 import { currentUser, posts, activeUsers } from "./FakePostsData";
 import { articles } from "./FakeAticles";
 import { recommends } from "./fakeRecoommends";
-import PostCard from "./components/Post";
+import Post from "./components/Post";
 import Articles from "./components/Articles";
 import Recommends from "./components/recommends";
 import ActiveFriends from "./components/activeFriends";
@@ -37,8 +37,31 @@ export default function App() {
     setFeed((prev) => [newPost, ...prev]);
   };
 
+  const handleCreateComment = (postId, data) => {
+    setFeed((prev) => {
+      return prev.map((post) => {
+        if (post.id !== postId) return post;
 
-    const handleLike = (id) => {
+        const newComment = {
+          id: Date.now(),
+          author: {
+            name: currentUser.name,
+            username: currentUser.username,
+            avatar: currentUser.avatar,
+          },
+          time: "just now",
+          content: data.content,
+        };
+        return {
+          ...post,
+          comments: [...(post.comments || []), newComment],
+          commentsCounter: (post.commentsCounter || 0) + 1,
+        };
+      });
+    });
+  };
+
+  const handleLike = (id) => {
     setFeed((prev) => {
       return prev.map((post) => {
         if (post.id !== id) return post;
@@ -53,22 +76,14 @@ export default function App() {
     });
   };
 
-  const handleComment = (id) => {
+  const handleBookmark = (id) => {
     setFeed((prev) => {
       return prev.map((post) => {
         if (post.id !== id) return post;
-        const commented = !post.commented;
-
-        return {
-          ...post,
-          commented,
-          commentsCounter: commented ? post.commentsCounter + 1 : post.commentsCounter + 1,
-        };
+        return { ...post, bookmarked: !post.bookmarked };
       });
     });
   };
-
-
 
   return (
     <div className="h-screen flex bg-[#050814] text-gray-300 overflow-hidden">
@@ -104,7 +119,13 @@ export default function App() {
 
             {/* POSTS FROM DATA */}
             {feed.map((post) => (
-              <PostCard key={post.id} post={post} handleLike={handleLike} handleComment={handleComment} />
+              <Post
+                key={post.id}
+                post={post}
+                handleLike={handleLike}
+                handleCreateComment={handleCreateComment}
+                handleBookmark={handleBookmark}
+              />
             ))}
 
             {/* Featured Article */}

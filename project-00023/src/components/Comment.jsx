@@ -1,12 +1,13 @@
 import { useState } from "react";
 
-export default function Comment({ handleComment, setOpen, postId }) {
+export default function Comment({handleCreateComment, setOpen }) {
+
   const [content, setContent] = useState("");
 
   const submit = () => {
     if (!content.trim()) return;
 
-    handleComment(postId); 
+    handleCreateComment({content}); 
 
     setContent("");
     setOpen(false);
@@ -39,6 +40,10 @@ export default function Comment({ handleComment, setOpen, postId }) {
           Submit
         </button>
       </div>
+
+
+     
+
     </div>
   );
 }

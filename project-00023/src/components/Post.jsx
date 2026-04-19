@@ -1,16 +1,24 @@
 import { useState } from "react";
 import Comment from "./Comment";
-export default function PostCard({ post, handleLike ,handleComment }) {
+export default function Post({
+  post,
+  handleLike,
+  handleCreateComment,
+  handleBookmark,
+}) {
+  const [open, setOpen] = useState(false);
 
-        const [open, setOpen] = useState(false);
-  
   return (
     <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
       {/* AUTHOR */}
       <div className="flex items-center gap-3 mb-4">
         <img
           className="w-10 h-10 rounded-full object-cover"
-          src={post.author.avatar.startsWith('/') ? post.author.avatar : `/${post.author.avatar}`}
+          src={
+            post.author.avatar.startsWith("/")
+              ? post.author.avatar
+              : `/${post.author.avatar}`
+          }
           alt={post.author.name}
           loading="lazy"
         />
@@ -48,27 +56,59 @@ export default function PostCard({ post, handleLike ,handleComment }) {
           className="flex items-center gap-2"
         >
           <span>{post.liked ? "❤️" : "🤍"}</span>
-          {post.likes} 
+          {post.likes}
         </button>
 
-        <button 
-          onClick={() => setOpen(true)}
-          className="flex items-center gap-2 hover:text-cyan-400"
-        >
-          <span>💬</span> {post.commentsCounter} {post.comments}
+        <button className="flex items-center gap-2 hover:text-cyan-400">
+          <span>💬</span> {post.commentsCounter}
         </button>
+        <button
+          className="flex items-center gap-2 hover:text-cyan-400"
+          onClick={() => setOpen(true)}
+        >
+          add comment +
+        </button>
+
         <button className="flex items-center gap-2 hover:text-purple-400">
           <span>↪</span> {post.shares}
         </button>
 
-
-        <button className="flex items-center gap-2 hover:text-yellow-400">
-          <span>🔖</span>
-            
+        <button
+          onClick={() => handleBookmark(post.id)}
+          className="flex items-center gap-2 hover:text-yellow-400"
+        >
+          <span>{post.bookmarked ? "🔖" : "□"}</span>
         </button>
-
       </div>
-      {open && <Comment handleComment={(commentData) => handleComment(post.id, commentData)} open={open} setOpen={setOpen} />}
+      {open && (
+        <Comment
+          handleCreateComment={(commentData) =>
+            handleCreateComment(post.id, commentData)
+          }
+          setOpen={setOpen}
+        />
+      )}
+      {/* Add under Comment component, around line 73 */}
+      {post.comments && post.comments.length > 0 && (
+        <div className="mt-4 space-y-3">
+          {post.comments.map((comment) => (
+            <div
+              key={comment.id}
+              className="flex gap-3 p-3 bg-white/5 rounded-lg"
+            >
+              <img
+                className="w-8 h-8 rounded-full"
+                src={comment.author.avatar}
+                alt={comment.author.name}
+              />
+              <div>
+                <p className="text-sm font-medium">{comment.author.name}</p>
+                <p className="text-sm text-gray-300">{comment.content}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

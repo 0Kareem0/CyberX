@@ -44,7 +44,7 @@ export const posts = [
     likes: 3418,
     commentsCounter: 1021,
     shares: 917,
-    bookmarked: false,
+    bookmarked: true,
     liked:true,  
     comment:[]
   },
