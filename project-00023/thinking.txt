@@ -103,3 +103,5 @@ ill just read something in the code and understand it and just move on
 4. Modify Post.jsx to show the comments when clicking the comment button
 5. Make the comment section toggleable in Post.jsx to show/hide comments
 and add a add comment button to add a button and for the emoji it should show the button
+
+now that i done the comment not fully but most of it next i should make the share

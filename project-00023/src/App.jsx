@@ -53,7 +53,7 @@ export default function App() {
           content: data.content,
         };
         return {
-          ...post,
+          ...post,  
           comments: [...(post.comments || []), newComment],
           commentsCounter: (post.commentsCounter || 0) + 1,
         };

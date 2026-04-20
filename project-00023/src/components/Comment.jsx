@@ -40,10 +40,6 @@ export default function Comment({handleCreateComment, setOpen }) {
           Submit
         </button>
       </div>
-
-
-     
-
     </div>
   );
 }

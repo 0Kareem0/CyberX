@@ -88,7 +88,7 @@ export default function Post({
           setOpen={setOpen}
         />
       )}
-      {/* Add under Comment component, around line 73 */}
+      
       {post.comments && post.comments.length > 0 && (
         <div className="mt-4 space-y-3">
           {post.comments.map((comment) => (
