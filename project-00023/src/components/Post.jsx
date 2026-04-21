@@ -7,6 +7,7 @@ export default function Post({
   handleBookmark,
 }) {
   const [open, setOpen] = useState(false);
+  const [commentOpen , SetCommentOpen] = useState(true)
 
   return (
     <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
@@ -60,7 +61,9 @@ export default function Post({
         </button>
 
         <button className="flex items-center gap-2 hover:text-cyan-400">
-          <span>💬</span> {post.commentsCounter}
+          <span
+            onClick={() => SetCommentOpen(!commentOpen)}
+          >💬</span> {post.commentsCounter}
         </button>
         <button
           className="flex items-center gap-2 hover:text-cyan-400"
@@ -89,7 +92,7 @@ export default function Post({
         />
       )}
       
-      {post.comments && post.comments.length > 0 && (
+      {post.comments && post.comments.length > 0 && commentOpen && (
         <div className="mt-4 space-y-3">
           {post.comments.map((comment) => (
             <div
