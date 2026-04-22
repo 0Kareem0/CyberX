@@ -13,6 +13,13 @@ export default function Comment({handleCreateComment, setOpen }) {
     setOpen(false);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      submit();
+    }
+  };
+
   return (
     <div className="mt-4 p-4 bg-white/5 border border-white/10 rounded-lg">
       <h4 className="text-sm font-medium mb-3">Add a comment</h4>
@@ -23,6 +30,7 @@ export default function Comment({handleCreateComment, setOpen }) {
         rows={3}
         value={content}
         onChange={(e) => setContent(e.target.value)}
+        onKeyDown={handleKeyDown}
       />
 
       <div className="flex justify-end gap-2">

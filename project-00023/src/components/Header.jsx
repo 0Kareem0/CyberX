@@ -25,6 +25,13 @@ export default function Header({ handleCreatePost }) {
     setOpen(false);
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      submit();
+    }
+  };
+
   return (
     <>
       <header className="h-16 bg-gradient-to-r from-[#0a0f1f] to-[#0d1228] border-b border-white/10 flex items-center justify-between px-6">
@@ -80,6 +87,7 @@ export default function Header({ handleCreatePost }) {
               placeholder="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              onKeyDown={handleKeyDown}
             />
 
             <textarea
@@ -88,6 +96,7 @@ export default function Header({ handleCreatePost }) {
               rows={4}
               value={content}
               onChange={(e) => setContent(e.target.value)}
+              onKeyDown={handleKeyDown}
             />
 
             <input
@@ -95,6 +104,7 @@ export default function Header({ handleCreatePost }) {
               placeholder="tags: react, js, linux"
               value={tags}
               onChange={(e) => setTags(e.target.value)}
+              onKeyDown={handleKeyDown}
             />
 
             <div className="flex justify-end gap-3">
