@@ -105,3 +105,13 @@ ill just read something in the code and understand it and just move on
 and add a add comment button to add a button and for the emoji it should show the button
 
 now that i done the comment not fully but most of it next i should make the share
+
+okay im done with the comment noooooooooow the share 
+
+first we need to think about it we are gonna make it like the repost in x 
+
+so we gonna copy the post we pressed share on and add it to the top of the posts list 
+and we gonna have a little text above it that says "🔁 [username] reposted"
+
+its easier than the share so we gonna do a repost we have to change the icon now 
+we changed the icon now a break xD

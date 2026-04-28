@@ -60,10 +60,8 @@ export default function Post({
           {post.likes}
         </button>
 
-        <button className="flex items-center gap-2 hover:text-cyan-400">
-          <span
-            onClick={() => SetCommentOpen(!commentOpen)}
-          >💬</span> {post.commentsCounter}
+        <button onClick={() => SetCommentOpen(!commentOpen)} className="flex items-center gap-2 hover:text-cyan-400">
+          <span>💬</span> {post.commentsCounter}
         </button>
         <button
           className="flex items-center gap-2 hover:text-cyan-400"
@@ -73,7 +71,7 @@ export default function Post({
         </button>
 
         <button className="flex items-center gap-2 hover:text-purple-400">
-          <span>↪</span> {post.shares}
+          <span><img className="h-5 w-5" src="repost3.png" alt="" /></span> {post.shares}
         </button>
 
         <button
