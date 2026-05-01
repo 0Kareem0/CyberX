@@ -13,6 +13,24 @@ import LeftBar from "./components/LeftBar";
 export default function App() {
   const [feed, setFeed] = useState(posts);
 
+  const handleRepost = (postId) => {
+    if (!title.trim() || !content.trim()) return;
+
+    handleCreatePost({
+      title,
+      content,
+      tags: tags
+        .split(",")
+        .map((t) => t.trim())
+        .filter(Boolean),
+    });
+
+    setTitle("");
+    setContent("");
+    setTags("");
+    setOpen(false);
+  };
+
   const handleCreatePost = (data) => {
     const newId = Math.max(...feed.map((p) => p.id), 0) + 1;
 

@@ -1,16 +1,6 @@
-import { useState } from "react";
-import Comment from "./Comment";
-export default function Post({
-  post,
-  handleLike,
-  handleCreateComment,
-  handleBookmark,
-}) {
-  const [open, setOpen] = useState(false);
-  const [commentOpen , SetCommentOpen] = useState(true)
-
-  return (
-    <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
+export default function RepostedPost() {
+    return (
+ <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
       {/* AUTHOR */}
       <div className="flex items-center gap-3 mb-4">
         <img

@@ -115,3 +115,15 @@ and we gonna have a little text above it that says "🔁 [username] reposted"
 
 its easier than the share so we gonna do a repost we have to change the icon now 
 we changed the icon now a break xD
+
+okay first we gonna do two type of repost one is the normal repost second is lets say quote 
+first the repost its gonna be simple just copy the post and add it to the top of the posts
+and above it will say reposted by the [current user] 
+but how to do that i code i really dont know 
+its similar to the create post but ur not really creating its just copying and adding 
+should we just make it as the createPost ? and add a reposted by the current user !
+lets try that 
+
+in the RepostedPost will be the after i click repost how the repost will look
+i think 
+ 
