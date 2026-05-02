@@ -8,7 +8,7 @@ export default function Post({
   handleRepost,
 }) {
   const [open, setOpen] = useState(false);
-  const [commentOpen , SetCommentOpen] = useState(true)
+  const [commentOpen, SetCommentOpen] = useState(true);
 
   return (
     <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
@@ -61,7 +61,10 @@ export default function Post({
           {post.likes}
         </button>
 
-        <button onClick={() => SetCommentOpen(!commentOpen)} className="flex items-center gap-2 hover:text-cyan-400">
+        <button
+          onClick={() => SetCommentOpen(!commentOpen)}
+          className="flex items-center gap-2 hover:text-cyan-400"
+        >
           <span>💬</span> {post.commentsCounter}
         </button>
         <button
@@ -71,8 +74,15 @@ export default function Post({
           add comment +
         </button>
         {/* the repost button */}
-        <button onClick={handleRepost} className="flex items-center gap-2 hover:text-purple-400">
-          <span><img className="h-5 w-5" src="repost3.png" alt="" /></span> {post.shares}
+        <button
+        // edited this
+          onClick={() => handleRepost(post)}
+          className="flex items-center gap-2 hover:text-purple-400"
+        >
+          <span>
+            <img className="h-5 w-5" src="repost3.png" alt="" />
+          </span>{" "}
+          {post.shares}
         </button>
 
         <button
@@ -90,7 +100,7 @@ export default function Post({
           setOpen={setOpen}
         />
       )}
-      
+
       {post.comments && post.comments.length > 0 && commentOpen && (
         <div className="mt-4 space-y-3">
           {post.comments.map((comment) => (

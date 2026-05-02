@@ -126,4 +126,8 @@ lets try that
 
 in the RepostedPost will be the after i click repost how the repost will look
 i think 
- 
+
+so we edited and added things in app.jsx and added the RepostedPost.jsx
+next we should read it and understand it its not done yet 
+there is still alot to do like the buttons 
+and the likes specialy cuz it has a lot of issues 

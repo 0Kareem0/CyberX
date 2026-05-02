@@ -3,6 +3,7 @@ import { currentUser, posts, activeUsers } from "./FakePostsData";
 import { articles } from "./FakeAticles";
 import { recommends } from "./fakeRecoommends";
 import Post from "./components/Post";
+import RepostedPost from "./components/RepostedPost";
 import Articles from "./components/Articles";
 import Recommends from "./components/recommends";
 import ActiveFriends from "./components/activeFriends";
@@ -16,6 +17,8 @@ export default function App() {
   const handleRepost = (post) => {
     const repostData = {
       type: "repost",
+      // edited this
+      id:Date.now(),
       repostedBy: currentUser,
       originalPost: post,
       time: "just now"
@@ -129,17 +132,22 @@ export default function App() {
               </div>
             </div>
 
-            {/* POSTS FROM DATA */}
-            {feed.map((post) => (
-              <Post
-                key={post.id}
-                post={post}
-                handleLike={handleLike}
-                handleCreateComment={handleCreateComment}
-                handleBookmark={handleBookmark}
-                handleRepost={handleRepost}
-              />
-            ))}
+{/* POSTS FROM DATA */}
+      {/* edited this */}
+             {feed.map((post) =>
+               post.type === "repost" ? (
+                 <RepostedPost key={post.id} post={post} />
+               ) : (
+                 <Post
+                   key={post.id}
+                   post={post}
+                   handleLike={handleLike}
+                   handleCreateComment={handleCreateComment}
+                   handleBookmark={handleBookmark}
+                   handleRepost={handleRepost}
+                 />
+               )
+             )}
 
             {/* Featured Article */}
             {articles.map((art) => (
