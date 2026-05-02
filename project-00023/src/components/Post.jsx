@@ -5,6 +5,7 @@ export default function Post({
   handleLike,
   handleCreateComment,
   handleBookmark,
+  handleRepost,
 }) {
   const [open, setOpen] = useState(false);
   const [commentOpen , SetCommentOpen] = useState(true)
@@ -70,7 +71,7 @@ export default function Post({
           add comment +
         </button>
         {/* the repost button */}
-        <button className="flex items-center gap-2 hover:text-purple-400">
+        <button onClick={handleRepost} className="flex items-center gap-2 hover:text-purple-400">
           <span><img className="h-5 w-5" src="repost3.png" alt="" /></span> {post.shares}
         </button>
 

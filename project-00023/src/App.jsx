@@ -13,23 +13,17 @@ import LeftBar from "./components/LeftBar";
 export default function App() {
   const [feed, setFeed] = useState(posts);
 
-  const handleRepost = (postId) => {
-    if (!title.trim() || !content.trim()) return;
-
-    handleCreatePost({
-      title,
-      content,
-      tags: tags
-        .split(",")
-        .map((t) => t.trim())
-        .filter(Boolean),
-    });
-
-    setTitle("");
-    setContent("");
-    setTags("");
-    setOpen(false);
+  const handleRepost = (post) => {
+    const repostData = {
+      type: "repost",
+      repostedBy: currentUser,
+      originalPost: post,
+      time: "just now"
+    };
+    setFeed((prev) => [repostData, ...prev]);
   };
+
+
 
   const handleCreatePost = (data) => {
     const newId = Math.max(...feed.map((p) => p.id), 0) + 1;
@@ -143,6 +137,7 @@ export default function App() {
                 handleLike={handleLike}
                 handleCreateComment={handleCreateComment}
                 handleBookmark={handleBookmark}
+                handleRepost={handleRepost}
               />
             ))}
 

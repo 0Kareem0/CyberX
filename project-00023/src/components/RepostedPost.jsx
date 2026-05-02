@@ -1,6 +1,10 @@
-export default function RepostedPost() {
-    return (
- <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
+export default function RepostedPost({
+  handleLike,
+  handleCreateComment,
+  handleBookmark,
+}) {
+  return (
+    <div className="bg-gradient-to-br from-[#0f1629] to-[#0a0f1f] border border-white/10 rounded-xl p-6 hover:border-cyan-500/30 transition">
       {/* AUTHOR */}
       <div className="flex items-center gap-3 mb-4">
         <img
@@ -50,7 +54,10 @@ export default function RepostedPost() {
           {post.likes}
         </button>
 
-        <button onClick={() => SetCommentOpen(!commentOpen)} className="flex items-center gap-2 hover:text-cyan-400">
+        <button
+          onClick={() => SetCommentOpen(!commentOpen)}
+          className="flex items-center gap-2 hover:text-cyan-400"
+        >
           <span>💬</span> {post.commentsCounter}
         </button>
         <button
@@ -61,7 +68,10 @@ export default function RepostedPost() {
         </button>
         {/* the repost button */}
         <button className="flex items-center gap-2 hover:text-purple-400">
-          <span><img className="h-5 w-5" src="repost3.png" alt="" /></span> {post.shares}
+          <span>
+            <img className="h-5 w-5" src="repost3.png" alt="" />
+          </span>{" "}
+          {post.shares}
         </button>
 
         <button
@@ -79,7 +89,7 @@ export default function RepostedPost() {
           setOpen={setOpen}
         />
       )}
-      
+
       {post.comments && post.comments.length > 0 && commentOpen && (
         <div className="mt-4 space-y-3">
           {post.comments.map((comment) => (
